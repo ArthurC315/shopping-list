@@ -26,14 +26,14 @@
           Quantity:
         </label>
 
-        <input type="number" id="quantity_box" name="query_quantity">
+        <input type="number" min="1" max="100" id="quantity_box" name="query_quantity">
         </p>
         <p>
         <label for="price_box">
           Approximate Price:
         </label>
 
-        <input type="number" step="0.01"  id="price_box" name="query_price">
+        <input type="number" step="0.01" min="0.01" min="500" id="price_box" name="query_price">
         </p>
       </div>
 
