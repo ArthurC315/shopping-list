@@ -1,0 +1,50 @@
+<div>
+  <div>
+    <h1>
+     Time to add a new shopping item!
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new item
+    </h2>
+
+    <form action="/insert_item" method="post">
+      <div>
+        <label for="name_box">
+          Item:
+        </label>
+
+        <input type="text" id="name_box" name="query_name">
+        <p>
+        <label for="quantity_box">
+          Quantity:
+        </label>
+
+        <input type="number" id="quantity_box" name="query_quantity">
+        </p>
+        <p>
+        <label for="price_box">
+          Approximate Price:
+        </label>
+
+        <input type="number" step="0.01"  id="price_box" name="query_price">
+        </p>
+      </div>
+
+      <p>
+      <button>
+        Create item!
+      </button>
+      </p>
+    </form>
+  </div>
+</div>
+
+<hr>
+

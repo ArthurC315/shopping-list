@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+
     <title>FinalProject</title>
     <%= csrf_meta_tags %>
 
@@ -16,6 +18,31 @@
   </head>
 
   <body>
+    <%=notice%>
+    <%=alert%>
+    
+   
+      <% if session.fetch(:user_id) == nil %>
+        <% else%>
+        <li>
+          <a href="/user_sign_out">
+            Sign out
+          </a>
+        </li>
+        <li>
+          <a href="/items">
+            Add a new item
+          </a>
+        </li>
+        <li> 
+          <a href="/home">
+            See your shopping list!
+          </a>
+        </li>
+        <% end%>
+        
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

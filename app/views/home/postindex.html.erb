@@ -1,0 +1,54 @@
+
+<% if @current_user.items.count == 0%>
+  <h1>Welcome, <%=@current_user.first_name%>! You don't have any items in your shopping list. Click <a href = "/items"> here</a> to add a new item!</h1>
+    <%else%>
+    <h1>Welcome, <%=@current_user.first_name%>! Here is your shopping list.</h1>
+    <table border="1"> 
+      <tr>
+        <th>
+          Item
+        </th>
+
+        <th>
+          Quantity
+        </th>
+
+        <th>
+          Approximate Price
+        </th>
+
+        <th>
+        </th>
+      </tr>
+      <%total_all_items = 0%>
+      <% @list_of_items.each do |a_item| %>
+      <tr>
+        <td>
+          <a href="/items/<%= a_item.id %>"><%= a_item.name %></a>
+        </td>
+
+        <td>
+          <%= a_item.quantity %>
+          <%total_price = a_item.quantity*a_item.price  %>
+          <%total_all_items += total_price%>
+        </td>
+
+        <td>
+          <%= a_item.price %>
+        </td>
+
+        <td>
+          <a href="/delete_item/<%= a_item.id %>">
+            Delete item
+          </a>
+        </td>
+ 
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <p><h1>Your approximate total is: $<u><%=total_all_items.round(5)%></u>. Try not to overspend!</h1></p>
+    <%end%>
+  
+  
+  
