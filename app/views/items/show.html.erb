@@ -34,7 +34,7 @@
       </dd>
 
       <dt>
-        Item Price
+        Item Approximate Price
       </dt>
       <dd>
         <%= @the_item.price %>
@@ -55,7 +55,7 @@
     <form action="/modify_item/<%= @the_item.id %>"  method="post" >
       <div>
         <label for="name_box">
-          Item name
+          Item:
         </label>
 
         <input type="text" id="name_box" name="query_name" value="<%= @the_item.name %>">
@@ -63,7 +63,7 @@
 
       <div>
         <label for="quantity_box">
-          Item quantity
+          Quantity:
         </label>
 
         <input type="number" id="quantity_box" name="query_quantity" value="<%= @the_item.quantity %>">
@@ -71,7 +71,7 @@
 
       <div>
         <label for="price_box">
-          Item price
+          Approximate Price:
         </label>
 
         <input type="number" step="0.01" id="price_box" name="query_price" value="<%= @the_item.price %>">

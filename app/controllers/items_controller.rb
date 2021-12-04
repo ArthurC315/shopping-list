@@ -12,10 +12,8 @@ class ItemsController < ApplicationController
     the_id = params.fetch("path_id")
 
     matching_items = Item.where({ :id => the_id })
-    matching_stocks = Stock.where({:item_id => the_id})
 
     @the_item = matching_items.at(0)
-    @the_stock_item = matching_stocks.at(0)
     render({ :template => "items/show.html.erb" })
   end
 
